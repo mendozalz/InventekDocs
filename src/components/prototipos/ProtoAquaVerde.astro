@@ -1,0 +1,397 @@
+---
+import CardParallax from "../referencias/CardParallax.astro";
+---
+
+<div class="main-container">
+  <div class="body-container">
+    <header>
+      <CardParallax/>
+    </header>
+    <br/>
+    <nav>
+      <div class="nav__content">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M10.5 3.798v5.02a3 3 0 0 1-.879 2.121l-2.377 2.377a9.845 9.845 0 0 1 5.091 1.013 8.315 8.315 0 0 0 5.713.636l.285-.071-3.954-3.955a3 3 0 0 1-.879-2.121v-5.02a23.614 23.614 0 0 0-3 0Zm4.5.138a.75.75 0 0 0 .093-1.495A24.837 24.837 0 0 0 12 2.25a25.048 25.048 0 0 0-3.093.191A.75.75 0 0 0 9 3.936v4.882a1.5 1.5 0 0 1-.44 1.06l-6.293 6.294c-1.62 1.621-.903 4.475 1.471 4.88 2.686.46 5.447.698 8.262.698 2.816 0 5.576-.239 8.262-.697 2.373-.406 3.092-3.26 1.47-4.881L15.44 9.879A1.5 1.5 0 0 1 15 8.818V3.936Z" clip-rule="evenodd" />
+          </svg>
+        </a>
+        <!-- Put a logo, then three links, the CTA with a chevron: Products, Pricing, Log In -->
+        <ul class="content">
+          <li>
+            <a href="#product"><span>Lorem #1</span></a>
+          </li>
+          <li>
+            <a href="#price"><span>Lorem #2</span></a>
+          </li>
+          <li>
+            <a href="#follow"><span>Footer</span></a>
+          </li>
+        </ul>
+        <button class="cook">
+          <span><span>Lorem&nbsp;</span>Ipsun</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <main>
+      <section id="product">
+        <h2>Lorem #1</h2>
+        <p>
+          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto
+          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto
+          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto
+        </p>
+      </section>
+      <section id="price">
+        <h2>Lorem #2</h2>
+        <p>
+          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+        </p>
+      </section>
+      <section id="follow">
+        <p>Texto Lorem Ipsun footer</p>
+        <a class="follow-link" href="https://twitter.com/intent/follow?screen_name=jh3yy" target="_blank" rel="noreferrer noopener">
+          <span style="color: black; padding-left: 30px; padding-right: 30px;">Footer</span>
+        </a>
+      </section>
+    </main>
+  </div>
+</div>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+@property --expanded {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 0;
+}
+
+@property --active {
+	syntax: '<number>';
+	inherits: true;
+	initial-value: 0;
+}
+
+:root {
+	--item: 80px;
+	--accent: hsl(40 100% 75% / 0.95);
+	--gap: 0.75rem;
+	--transition: 0.25s;
+	--elastic: linear(
+    0 0%, 0.0012 14.95%, 0.0089 22.36%,
+    0.0297 28.43%, 0.0668 33.43%,
+    0.0979 36.08%, 0.1363 38.55%,
+    0.2373 43.07%, 0.3675 47.01%,
+    0.5984 52.15%, 0.7121 55.23%,
+    0.8192 59.21%, 0.898 63.62%,
+    0.9297 66.23%, 0.9546 69.06%,
+    0.9733 72.17%, 0.9864 75.67%,
+    0.9982 83.73%, 1 100%
+  );
+}
+
+html {
+	color-scheme: light only;
+}
+
+html:not(:focus-within) {
+	scroll-behavior: smooth;
+}
+
+.main-container{
+  background-color: rgb(255, 255, 255);
+}
+.body-container {
+	display: flex;
+	flex-direction: column;
+	place-items: center;
+	min-height: 100vh;
+	padding: 1rem;
+	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
+}
+
+main section {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+.body-container::before {
+	--line: color-mix(in lch, canvasText 25%, transparent);
+	--size: 60px;
+	content: '';
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background: linear-gradient(
+				90deg,
+				var(--line) 1px,
+				transparent 1px var(--size)
+			)
+			0 -5vmin / var(--size) var(--size),
+		linear-gradient(var(--line) 1px, transparent 1px var(--size)) 0 -5vmin / var(
+				--size
+			) var(--size);
+	mask: linear-gradient(-15deg, transparent 60%, white);
+	top: 0;
+	z-index: 1;
+}
+
+.follow-link {
+	border: 2px solid canvasText;
+	border-radius: 100px;
+	display: flex;
+	gap: 0 1rem;
+	padding: 0.5rem 1rem;
+	white-space: nowrap;
+	color: canvasText;
+	text-decoration: none;
+	align-items: center;
+	font-weight: 400;
+	font-size: 1.25rem;
+}
+
+.follow-link:is(:hover, :focus-visible) {
+	background: color-mix(in lch, canvasText 2%, hsl(0 0% 0% / 0.1));
+}
+
+.follow-link svg {
+	width: 48px;
+}
+
+h2 {
+	font-family: "EB Garamond", serif;
+	font-size: clamp(1.5rem, 3vw + 1rem, 6rem);
+  color: black !important; /* Esto es solo para el contenedor de prototipo */
+}
+
+header {
+	min-height: 30vh; /* Esto es solo para el contenedor de prototipo el top deberia ser de 50vh */
+	display: grid;
+	place-items: center;
+	align-content: center;
+	text-align: center;
+}
+
+nav {
+	position: sticky;
+	top: 5rem; /* Esto es solo para el contenedor de prototipo el top deberia ser de 1rem */
+	display: flex;
+	border-radius: 100px;
+	overflow: hidden;
+	background: canvasText;
+	color: canvas;
+	font-size: 14px;
+	height: 48px;
+	padding-left: 0rem;
+  z-index: 1;
+}
+
+.nav__content {
+	display: grid;
+  padding-left: 10px; /* Esto es solo para el contenedor de prototipo el padding debe ser eliminado */
+  gap: 5px; /* Esto es solo para el contenedor de prototipo el gap debe ser eliminado */
+}
+
+nav li {
+	width: var(--item);
+	text-align: center;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: var(--expanded);
+	transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
+    margin: 0 !important;
+}
+
+nav li:nth-of-type(1) { --i: 0; }
+nav li:nth-of-type(2) { --i: 1; }
+nav li:nth-of-type(3) { --i: 2; }
+
+nav li a {
+	color: canvas;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	display: grid;
+	place-items: center;
+	white-space: nowrap;
+}
+
+footer {
+	padding: 2rem;
+}
+
+[href="#"] {
+	width: 48px;
+	display: grid;
+	place-items: center;
+	color: var(--accent) !important; /* Esto es solo para el contenedor de prototipo se debe eliminar el -- !important -- */
+}
+
+[href="#"] svg {
+	width: 24px;
+}
+
+.cook {
+	border-radius: 100px;
+	display: flex;
+	gap: 0 0.5rem;
+	align-items: center;
+	background: canvasText;
+	color: var(--accent) !important; /* Esto es solo para el contenedor de prototipo se debe eliminar el -- !important -- */
+	border: 0;
+	padding: 0 var(--gap);
+	white-space: nowrap;
+	z-index: 2;
+	cursor: pointer;
+	position: relative;
+  margin: 0 !important; /* Esto es solo para el contenedor de prototipo */
+}
+
+.cook::before {
+	content: "";
+	position: absolute;
+	right: 100%;
+	width: 48px;
+	aspect-ratio: 1;
+	scale: calc(1 - var(--expanded)) 1;
+	transition: scale var(--transition);
+	transform-origin: 100% 50%;
+}
+
+.cook:is(:hover, :focus-visible) {
+	--intent: 1;
+}
+
+.cook svg {
+	width: 16px;
+	min-width: 16px;
+	stroke-width: 3px;
+	rotate: calc(var(--intent, 0) * 360deg);
+	transition: rotate var(--transition);
+}
+
+.cook span span {
+	display: none;
+}
+
+@media(min-width: 768px) {
+	.cook span span {
+		display: inline-block;
+	}	
+}
+
+main {
+	min-height: 200vh;
+	width: 70ch;
+	margin: 0 auto;
+	margin-top: 6rem;
+	max-width: 100%;
+}
+
+h1 {
+	font-family: 'EB Garamond', serif;
+	font-size: clamp(3rem, 4vw + 1rem, 8rem);
+	font-weight: 500;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	line-height: 0.9;
+  color: black !important; /* Esto es solo para el contenedor de prototipo */
+}
+
+h1 span:first-of-type {
+	font-variant: small-caps;
+	font-size: 0.5em;
+}
+
+h1 span:last-of-type {
+	font-weight: 600;
+}
+
+.content {
+	list-style-type: none;
+	display: flex;
+	height: 100%;
+/*	gap: 0 var(--gap);*/
+	align-items: center;
+	padding: 0 1rem;
+	margin: 0;
+}
+
+@supports(animation-timeline: scroll()) {
+	:root {
+		timeline-scope: --header, --product, --price, --follow;
+	}
+	header {
+		view-timeline-name: --header;
+	}
+	nav {
+		animation: expand both steps(1, end);
+		animation-timeline: --header;
+		animation-range: exit;
+	}
+
+	li a {
+		opacity: calc(0.5 + (var(--active)));
+		position: relative;
+		transition: opacity var(--transition);
+    color: white !important; /* Esto es solo para el contenedor de prototipo */
+	}
+
+	li:is(:hover, :focus-visible) a {
+		opacity: 1;
+	}
+
+	#product { view-timeline: --product; }
+	#price { view-timeline: --price; }
+	#follow { view-timeline: --follow; }
+
+	nav li {
+		animation: activate both steps(1);
+	}
+
+	li:has([href="#product"]) {
+		animation-timeline: --product;
+		animation-range: entry -100% exit 100%;
+	}
+	li:has([href="#price"]) {
+		animation-timeline: --price;
+	}
+	li:has([href="#follow"]) {
+		animation-timeline: --follow;
+	}
+
+	@keyframes activate {
+		50% { --active: 1; }
+	}
+
+	a span {
+		position: relative;
+	}
+
+
+	.nav__content {
+		grid-template-columns: auto calc(var(--expanded) * (3 * var(--item))) auto;
+		transition: grid-template-columns 1s var(--elastic);
+	}
+	.cook {
+		padding-left: calc(var(--expanded) * var(--gap));
+		transition: padding 1s var(--elastic);
+	}
+	@keyframes expand { to { --expanded: 1; } }
+}
+</style>
