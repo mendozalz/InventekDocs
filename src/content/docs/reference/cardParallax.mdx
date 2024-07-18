@@ -3,7 +3,7 @@ title: "Card Parallax"
 description: Diseño Card efecto parallax.
 ---
 
-import CardParallax from "@/components/referencias/CardParallax.astro";
+import CardParallax from "@/components/referencias/cardparallax/CardParallax.tsx";
 import Cita from "@/components/Cita.astro"
 
 ## Componente enriquecido con GSAP.
@@ -11,7 +11,7 @@ import Cita from "@/components/Cita.astro"
 Diseño Card con efecto Parallax enriquecido con GSAP:
 
 <br />
-<CardParallax />
+<CardParallax client:load/>
 <Cita nombre="Jhey" hiperv="https://x.com/@jh3yy"/>
 <br />
 
@@ -324,4 +324,4 @@ const START = () => {
   }
 };
 document.body.addEventListener('click', START, { once: true });
-```
+```@/components/referencias/cardparallax/CardParallax.js

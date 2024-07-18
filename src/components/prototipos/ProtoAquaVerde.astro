@@ -1,11 +1,11 @@
 ---
-import CardParallax from "../referencias/CardParallax.astro";
+import CardParallax from "@/components/referencias/cardparallax/CardParallax.tsx";
 ---
 
 <div class="main-container">
   <div class="body-container">
     <header>
-      <CardParallax/>
+      <CardParallax client:load/>
     </header>
     <br/>
     <nav>
