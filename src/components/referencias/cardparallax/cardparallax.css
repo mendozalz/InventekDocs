@@ -58,7 +58,9 @@ article {
   top: 6%;
   margin: 0;
   font-size: 8rem;
-  translate: -50% 0;
+  width: 100%;
+  text-align: center;
+  translate: -50% 0 !important;
   text-transform: uppercase;
   font-family: "Bebas Neue", sans-serif;
   color: white;
