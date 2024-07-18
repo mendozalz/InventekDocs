@@ -60,7 +60,7 @@ article {
   font-size: 8rem;
   width: 100%;
   text-align: center;
-  translate: -50% 0 !important;
+  translate: -50% 0;
   text-transform: uppercase;
   font-family: "Bebas Neue", sans-serif;
   color: white;
