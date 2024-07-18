@@ -5,18 +5,18 @@ import CardParallax from "@/components/referencias/cardparallax/CardParallax.tsx
 <div class="main-container">
   <div class="body-container">
     <header>
-      <CardParallax client:load/>
+      <CardParallax client:only="react"/>
     </header>
     <br/>
     <nav>
-      <div class="nav__content">
+      <div class="nav__content-torre">
         <a href="#">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
             <path fill-rule="evenodd" d="M10.5 3.798v5.02a3 3 0 0 1-.879 2.121l-2.377 2.377a9.845 9.845 0 0 1 5.091 1.013 8.315 8.315 0 0 0 5.713.636l.285-.071-3.954-3.955a3 3 0 0 1-.879-2.121v-5.02a23.614 23.614 0 0 0-3 0Zm4.5.138a.75.75 0 0 0 .093-1.495A24.837 24.837 0 0 0 12 2.25a25.048 25.048 0 0 0-3.093.191A.75.75 0 0 0 9 3.936v4.882a1.5 1.5 0 0 1-.44 1.06l-6.293 6.294c-1.62 1.621-.903 4.475 1.471 4.88 2.686.46 5.447.698 8.262.698 2.816 0 5.576-.239 8.262-.697 2.373-.406 3.092-3.26 1.47-4.881L15.44 9.879A1.5 1.5 0 0 1 15 8.818V3.936Z" clip-rule="evenodd" />
           </svg>
         </a>
         <!-- Put a logo, then three links, the CTA with a chevron: Products, Pricing, Log In -->
-        <ul class="content">
+        <ul class="content-torre">
           <li>
             <a href="#product"><span>Lorem #1</span></a>
           </li>
@@ -123,14 +123,14 @@ main section {
 	min-height: 100vh;
 	display: grid;
 	place-items: center;
-	align-content: center;
+	align-content-torre: center;
 	text-align: center;
 }
 
 .body-container::before {
 	--line: color-mix(in lch, canvasText 25%, transparent);
 	--size: 60px;
-	content: '';
+	content-torre: '';
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
@@ -180,7 +180,7 @@ header {
 	min-height: 30vh; /* Esto es solo para el contenedor de prototipo el top deberia ser de 50vh */
 	display: grid;
 	place-items: center;
-	align-content: center;
+	align-content-torre: center;
 	text-align: center;
 }
 
@@ -198,7 +198,7 @@ nav {
   z-index: 1;
 }
 
-.nav__content {
+.nav__content-torre {
 	display: grid;
   padding-left: 10px; /* Esto es solo para el contenedor de prototipo el padding debe ser eliminado */
   gap: 5px; /* Esto es solo para el contenedor de prototipo el gap debe ser eliminado */
@@ -210,7 +210,7 @@ nav li {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content-torre: center;
 	opacity: var(--expanded);
 	transition: opacity var(--transition) calc(0.75s + (var(--i) * 0.05s));
     margin: 0 !important;
@@ -262,7 +262,7 @@ footer {
 }
 
 .cook::before {
-	content: "";
+	content-torre: "";
 	position: absolute;
 	right: 100%;
 	width: 48px;
@@ -322,7 +322,7 @@ h1 span:last-of-type {
 	font-weight: 600;
 }
 
-.content {
+.content-torre {
 	list-style-type: none;
 	display: flex;
 	height: 100%;
@@ -384,7 +384,7 @@ h1 span:last-of-type {
 	}
 
 
-	.nav__content {
+	.nav__content-torre {
 		grid-template-columns: auto calc(var(--expanded) * (3 * var(--item))) auto;
 		transition: grid-template-columns 1s var(--elastic);
 	}
